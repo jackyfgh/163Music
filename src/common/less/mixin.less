@@ -1,0 +1,30 @@
+.border-1px(@bdcolor){
+    position: relative;
+    &:after{
+        display:block;
+        position: absolute;
+        width:100%;
+        left: 0;
+        bottom: 0;
+        border-top: 1px solid @bdcolor;
+        content:"";
+    }
+}
+
+.border-none(){
+    &:after{
+        display:none;
+    }      
+}
+.border-2px(){
+    position: relative;
+    &:after{
+        display:block;
+        position: absolute;
+        width:100%;
+        left: 0;
+        bottom: 0;
+        border-top: 2px solid #d33a31;
+        content:"";
+    }
+}
