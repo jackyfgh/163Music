@@ -1,6 +1,6 @@
 # musicplayer
 
-> A Vue.js project
+> 仿网易云音乐（VUE版本）
 
 ## Build Setup
 
