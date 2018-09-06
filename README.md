@@ -20,3 +20,8 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 # 163Music
+
+
+
+网易云音乐VUE+Vant UI+axios+Vue Router+Vuex
+首先需要开启nodeAPI在163nodeAPI中有代码 运行node app.js启动后台
