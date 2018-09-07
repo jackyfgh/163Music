@@ -4,7 +4,7 @@
             <div v-show="!loding" class="content">
                 <h2 class="topTitle">推荐歌单</h2>
                 <div class="recommendSongs">
-                    <a v-for="item in list" href="javascript:;">
+                    <a v-for="item in list" :href="'#/playlist/'+item.id" >
                         <img @load="loadImg" :src="item.picUrl" :alt="item.name">
                         <span>{{item.playCount|formatNumber}}</span>
                         <p>{{item.name}}</p>
@@ -134,7 +134,7 @@ export default {
             &>span{
                     position: absolute;
                     right: 5px;
-                     top: 2px;
+                    top: 2px;
                     z-index: 3;
                     padding-left: 13px;
                     color: #fff;
