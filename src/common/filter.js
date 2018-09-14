@@ -61,6 +61,21 @@ const vfilter={
         }
         return strZ;
     },
+    formatPlaysongs:function(item){
+        let arr=item.ar;
+        let str='';
+        const TITLE_MAX_LENGTH=25;
+        arr.forEach((item,index)=>{
+            if(index==0){str=str+item.name}
+            else{str=str+'/'+item.name}
+        })
+        let strZ=str+'-'+item.al.name
+        if(strZ.length>TITLE_MAX_LENGTH)
+        {
+            return strZ.substring(0,TITLE_MAX_LENGTH)+"..";
+        }
+        return strZ;
+    },
     toLong:function(str,MAX_LENGTH) {
         let strZ=str;
         if(strZ.length>MAX_LENGTH){
@@ -74,6 +89,10 @@ const vfilter={
             return '0'+num;
         }
         else{return num}    
+    },
+    formatBr:function(str){
+        let strZ=str.replace(/\n/g,'<br>');
+        return strZ
     }
 }
 export default vfilter;
