@@ -93,6 +93,19 @@ const vfilter={
     formatBr:function(str){
         let strZ=str.replace(/\n/g,'<br>');
         return strZ
+    },
+    playMusicArName:function(item){
+        if(item.ar!=undefined)
+        {
+            return item.ar[0].name;
+        }
+        if(item.artists!=undefined)
+        {
+            return item.artists[0].name;
+        }
+        if(item.alg!=undefined){
+            return item.alg;
+        }
     }
 }
 export default vfilter;

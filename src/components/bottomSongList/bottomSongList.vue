@@ -4,8 +4,8 @@
     <div class="SongListContxt">
       <ul>
         <li v-for="(item,i) in songListDetails" :key="i" class="halfBorder" @click="switchSongs(item.id)" :class="{'redLight':item.id ==curMusic}">
-          <i class="iconfont icon-playing" v-if="item.id ==curMusic"></i> {{item.name}}
-          <s> - {{item.ar[0].name}}</s>
+          <i class="iconfont icon-bofang" v-if="item.id ==curMusic"></i> {{item.name}}
+          <s> - {{item|playMusicArName}}</s>
         </li>
       </ul>
     </div>

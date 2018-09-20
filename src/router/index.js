@@ -14,6 +14,7 @@ const routes = [
         children:[
           {
             path: '/163music/recommend',
+            name:'recommend',
             component: recommend
           }, {
             path: '/163music/hot',

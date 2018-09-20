@@ -146,6 +146,7 @@ export default {
 
 .hotSearchList{
     margin: 10px 0 7px;
+    font-size: 0px;
     &>.listItem{
             display: inline-block;
             height: 32px;
