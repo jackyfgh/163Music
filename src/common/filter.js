@@ -94,7 +94,7 @@ const vfilter={
         let strZ=str.replace(/\n/g,'<br>');
         return strZ
     },
-    playMusicArName:function(item){
+    playMusicArName:function(item){;
         if(item.ar!=undefined)
         {
             return item.ar[0].name;
@@ -102,9 +102,6 @@ const vfilter={
         if(item.artists!=undefined)
         {
             return item.artists[0].name;
-        }
-        if(item.alg!=undefined){
-            return item.alg;
         }
     }
 }

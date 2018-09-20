@@ -78,7 +78,11 @@ export default {
         let newSongs=await this.$.get('personalized/newsong');
         this.list=list.result.slice(0,6);
         this.newSongs=newSongs.result;
-        this.$store.commit('set_playList',this.list);
+        let arrlist=[];
+        this.newSongs.forEach((item)=>{
+           arrlist.push(item.song);
+        })
+        this.$store.commit('set_playList',arrlist);
         this._initScroll();
     }
 }

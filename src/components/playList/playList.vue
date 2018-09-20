@@ -38,7 +38,7 @@
                                 <div class="bdBottom">
                                     <div class="playSongsNnum">{{index+1|toZero}}</div>
                                      <div class="lf">
-                                        <div class="title">{{item.name}}</div>
+                                        <div class="title">{{item.name|toLong(27)}}</div>
                                         <div class="desc">{{item|formatPlaysongs}}</div>
                                     </div>
                                     <div class="lr">
