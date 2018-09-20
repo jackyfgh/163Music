@@ -34,7 +34,7 @@
             <div class="songsWrap">
                 <h3 class="Htitle">歌曲列表</h3>
                    <div class="playSongs">
-                    <a v-for="(item,index) in playSongs" href="javascript:;">
+                    <a v-for="(item,index) in playSongs" :key="index" :href="'#/songDetails/'+item.id">
                                 <div class="bdBottom">
                                     <div class="playSongsNnum">{{index+1|toZero}}</div>
                                      <div class="lf">
@@ -107,7 +107,8 @@ export default {
          this.nickname=data.playlist.creator.nickname;
          this.description=data.playlist.description;
          this.tags=data.playlist.tags;
-         this.playSongs=data.playlist.tracks;    
+         this.playSongs=data.playlist.tracks;
+         this.$store.commit('set_playList',this.playSongs);    
     }    
 }
 </script>
@@ -216,6 +217,8 @@ export default {
 //desc中间的描述部分
 .middle{
     margin-top:30px;
+    font-size: 16px;
+    line-height: 20px;
 }
 .tagWrap{
     position: relative;

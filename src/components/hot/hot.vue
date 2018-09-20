@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div v-show="!loding" class="hotSongs">
-                    <a v-for="(item,index) in hotSongs" href="javascript:;">
+                    <a v-for="(item,index) in hotSongs" :key="index" :href="'#/songDetails/'+item.id">
                                 <div class="bdBottom">
                                     <div v-if="index<3" class="hotSongsNnum red">{{index+1|toZero}}</div>
                                     <div v-else class="hotSongsNnum">{{index+1|toZero}}</div>
@@ -62,6 +62,7 @@ export default {
         this.loding=true;
         let data=await this.$.get('top/list',{idx:1});
         this.hotSongs=data.playlist.tracks.slice(0,20);
+        this.$store.commit('set_playList',this.hotSongs);
         this._initScroll();
         this.loding=false;
     }

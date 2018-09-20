@@ -4,7 +4,7 @@
             <div v-show="!loding" class="content">
                 <h2 class="topTitle">推荐歌单</h2>
                 <div class="recommendSongs">
-                    <a v-for="item in list" :href="'#/playlist/'+item.id" >
+                    <a v-for="(item,index) in list" :key="index" :href="'#/playlist/'+item.id" >
                         <img @load="loadImg" :src="item.picUrl" :alt="item.name">
                         <span>{{item.playCount|formatNumber}}</span>
                         <p>{{item.name}}</p>
@@ -12,7 +12,7 @@
                 </div>
                 <h2 class="topTitle">最新音乐</h2>
                 <div class="newSongs">
-                    <a v-for="item in newSongs" href="javascript:;">
+                    <a v-for="(item,index) in newSongs" :key="index" :href="'#/songDetails/'+item.id">
                         <div class="bdBottom">
                             <div class="lf">
                               <div class="title">{{item.name}}</div>
@@ -78,6 +78,7 @@ export default {
         let newSongs=await this.$.get('personalized/newsong');
         this.list=list.result.slice(0,6);
         this.newSongs=newSongs.result;
+        this.$store.commit('set_playList',this.list);
         this._initScroll();
     }
 }

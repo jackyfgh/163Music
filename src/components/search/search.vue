@@ -12,12 +12,12 @@
                 <div v-if="type==1" class="hotSeasrch">
                     <h3 class="title">热门搜索</h3>
                     <ul class="hotSearchList">
-                          <li v-for="item in hotSearchList" @click="liClick(item.first)" class="listItem">{{item.first}}</li>
+                          <li v-for="(item,index) in hotSearchList" :key="index" @click="liClick(item.first)" class="listItem">{{item.first}}</li>
                     </ul>
                 </div>
                 <div v-if="type==3" class="searchSongsList">
                     <h3 class="title">最佳匹配</h3>
-                       <a v-for="item in searchSongs" href="javascript:;">
+                       <a v-for="(item,index) in searchSongs" :key="index" :href="'#/songDetails/'+item.id">
                         <div class="bdBottom">
                             <div class="lf">
                               <div class="title">{{item.name|toLong(16)}}</div>
@@ -60,6 +60,7 @@ export default {
             this.type=2;
             let res=await this.$.get('search',{keywords:this.value});
             this.searchSongs=res.result.songs;
+            this.$store.commit('set_playList',this.searchSongs);
             this.type=3;
         },
         clear:function(){
