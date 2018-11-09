@@ -34,7 +34,7 @@ function checkReload(res){
         Toast.fail('拉取数据失败');
     }
 }
-const prefix = 'http://localhost:3000/'
+const prefix = '/'
 export default {
     get(url, params) {
         if (!url) return
